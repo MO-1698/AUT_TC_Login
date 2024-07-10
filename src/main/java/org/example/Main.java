@@ -15,18 +15,18 @@ public class Main {
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.automationexercise.com/");
         driver.manage().window().maximize();
-        WebElement Signup_Login = driver.findElement(By.xpath("//a[@href=\"/login\"]"));
-        Signup_Login.click();
-        WebElement Email = driver.findElement(By.xpath("//input[@data-qa=\"login-email\"]"));
-        Email.sendKeys("Osama@gmail.com");
-        WebElement Password = driver.findElement(By.xpath("//input[@data-qa=\"login-password\"]"));
-        Password.sendKeys("Osama");
-        WebElement LoginButton = driver.findElement(By.xpath("//button[@data-qa=\"login-button\"]"));
-        LoginButton.click();
+        WebElement loginPageButton = driver.findElement(By.xpath("//a[@href=\"/login\"]"));
+        loginPageButton.click();
+        WebElement email = driver.findElement(By.xpath("//input[@data-qa=\"login-email\"]"));
+        email.sendKeys("Osama@gmail.com");
+        WebElement password = driver.findElement(By.xpath("//input[@data-qa=\"login-password\"]"));
+        password.sendKeys("Osama");
+        WebElement loginButton = driver.findElement(By.xpath("//button[@data-qa=\"login-button\"]"));
+        loginButton.click();
         //driver.manage().timeouts().implicitlyWait(Duration.ofMillis(500));
-        WebElement LogoutButton = driver.findElement(By.xpath("//a[@href=\"/logout\"]"));
+        WebElement logoutButton = driver.findElement(By.xpath("//a[@href=\"/logout\"]"));
         //String LogoutButtonText = LogoutButton.getText();
-        if (LogoutButton.isDisplayed() && LogoutButton.isEnabled()) {
+        if (logoutButton.isDisplayed() && logoutButton.isEnabled()) {
 
             System.out.println("Pass");
         } else {
